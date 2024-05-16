@@ -1,6 +1,12 @@
-# Introduction to Algorithms
+# APD545 Workshops
 
-A curated collection of code, notes, and learnings from the [Introduction to Algorithms](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/pages/syllabus/) course on [MIT Open Course Ware](https://ocw.mit.edu).
+A collection of all the workshops that I completed as a part of the Application Development using Java course at Seneca Polytechnic.
+
+## Workshops
+
+|Name|Score|Video Link|
+|---|---|---|
+|**Workshop 01**|`100`|https://youtu.be/loXpSCm9u6k|
 
 ### Author
 [Aryan Khurana](https://github.com/AryanK1511)
