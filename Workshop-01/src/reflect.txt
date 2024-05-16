@@ -1,0 +1,24 @@
+In this workshop, I learnt several Object-Oriented Programming (OOP) concepts using JAVA:
+
+1.  Abstraction:
+    I used abstract classes (User) to define common behavior and properties for different types of users (RegisteredUser, GuestUser).
+    The getUserDetails() method is abstract, requiring subclasses to provide their own implementation.
+
+2.  Inheritance:
+    I also utilized inheritance to create subclasses (RegisteredUser, GuestUser) that inherit attributes and methods from a base class (User).
+    This allows for code reuse and promotes a hierarchical structure.
+
+3.  Encapsulation:
+    I encapsulated the state of the User class by making the totalNumberOfUsersTillDate, userId, and shoppingCart fields private.
+    Access to these fields is controlled through getter methods (getUserId, getShoppingCart, getTotalNumberOfUsersTillDate), maintaining data integrity.
+
+4.  Polymorphism:
+    By defining the getUserDetails() method as abstract in the User class and providing different implementations in the subclasses (RegisteredUser, GuestUser), I demonstrated polymorphism.
+    This allows us to treat objects of different classes uniformly through a common interface (User).
+
+5.  Static Members:
+    I used a static variable totalNumberOfUsersTillDate to keep track of the total number of users created across all instances of the User class. This demonstrates the use of static members to maintain shared state across instances.
+
+Other Notes:
+1. Used protected for the userId, shoppingCart, and getUserDetails method. This allows subclasses (RegisteredUser and GuestUser) to access these members while restricting access from other classes.
+2. The User class has a composition relationship with the ShoppingCart class, as each User has a ShoppingCart instance. This allows us to model complex relationships between objects.
