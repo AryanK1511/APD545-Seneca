@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.Region?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apd.workshop02.controllers.PostingsController" spacing="10" style="-fx-padding: 10;">
+    <children>
+        <HBox spacing="10">
+            <Button fx:id="backButton" text="Back" onAction="#handleBackButton" style="-fx-font-size: 14px;" />
+            <Region fx:id="spacer" HBox.hgrow="ALWAYS"/>
+            <Label text="Job Postings" style="-fx-font-size: 24px; -fx-font-weight: bold;" />
+            <Region fx:id="spacer2" HBox.hgrow="ALWAYS"/>
+            <Button text="Exit" onAction="#handleExitButton" style="-fx-font-size: 14px;" />
+        </HBox>
+        <VBox fx:id="jobPostingsContainer" spacing="10" style="-fx-padding: 10;"></VBox>
+    </children>
+</VBox>

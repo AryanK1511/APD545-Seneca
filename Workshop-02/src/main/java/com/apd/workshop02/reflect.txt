@@ -1,0 +1,61 @@
+/**********************************************
+ Workshop # 02
+ Course: APD545 - Semester 5
+ Last Name: Khurana
+ First Name: Aryan
+ ID: 145282216
+ Section: NAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Aryan Khurana
+ Date: June 06, 2024
+ **********************************************/
+
+Class Design:
+
+In this workshop I have implemented the Model-View-Controller (MVC) design pattern to separate the application's concerns, making it more modular and maintainable.
+
+Let us start with the models. I have three model classes, Admin, Applicant and JobRole:
+
+1. Applicant: Represents an applicant with properties such as name, phone number, skills, companies they are interested in, and the job they applied for. Every time a user applies to a job, an instance of this class is created with all the details.
+
+2. JobRole: Represents a job role with properties such as job name, deadline date, description, and required skills.
+
+3. Admin: Acts as a data repository managing the collection of applicants. It provides methods to add, retrieve, and remove applicants from a HashMap. This is a static class and every instance of the Applicant class that is created is recorded here so that I can keep track of the applicants.
+
+Now, let us move on to the views. The View is responsible for displaying the data to the user. It listens to the Controller for changes and updates the display accordingly. In y application, the View is composed of various FXML files and UI elements:
+
+1. FXML Files: These files define the layout and structure of the UI, such as homepage.fxml, admin.fxml, postings.fxml, and job_details.fxml.
+
+2. UI Elements: Labels, buttons, text fields, and other controls defined in the FXML files and accessed in the Controller classes to update the UI based on user interactions and data changes.
+
+Let us move to the controllers now.
+
+The Controller handles user input and interactions. It processes the input, updates the Model, and refreshes the View as needed. In my application, the Controller classes are:
+
+1. HomeController: Manages the initial navigation from the homepage to either the user view (job postings) or the admin view. This just has an event handles and loads the Scene for whatever the user requests.
+
+2. AdminController: Manages the admin view, allowing the admin to see a list of applicants and view detailed information about selected applicants. This controller interacts with the Admin model and gets all the applicants that have applied using our application and displays the applications on the Admin portal.
+
+3. JobDetailsController: Handles the job details view, allowing users to apply for jobs and clear or close the application form. This is the most important one as it handles the main logic in the workshop. It shows the details of the job that was clicked on in the job postings view and takes user input such as name, phone number, skills, preferred companies and it already keeps an account of what job this is for. When the user submits the form, this controller creates an instance of the Applicant class and saves it in the Admin Hashmap for future retrieval.
+
+4. PostingsController: Manages the job postings view, displaying available job roles and navigating to job details when a job is selected. This controller is responsible for interacting with the JobRole model. It creates 3 instances of the JobRole class which represents three separate job postings. This controller displays them on the view. Each posting also has a button equipped with an event listener that takes you to the view for the job that you clicked on.
+
+5. The Main Controller: This is where the application starts by just loading the home page.
+
+Data structure:
+
+In this workshop, I chose to use a HashMap to store the details of each applicant.
+
+One of the primary reasons for using a HashMap is its average-case constant time complexity for get and put operations, which is O(1). This is achieved through hashing, which allows direct access to the value associated with a key.
+When we store an instance of the Applicant class using their name as the key, retrieving this instance becomes very fast. Regardless of the number of applicants, accessing any applicant’s details will take approximately the same amount of time. All you have to do is specify the name that you want and you are able to find it because of the way a hashmap works.
+
+Similar to retrieval, the insertion (put) and deletion (remove) operations in a HashMap also have an average time complexity of O(1). I am not doing any of that in this workshop but this just shows how scalable this architecture is. This makes it extremely efficient to add new applicants or remove existing ones.
+
+I could've also used something like an ArrayList, but that would've been very inefficient. This is because hashmaps can efficiently handle large datasets. If we were using an ArrayList, the time complexity for searching an applicant by name would be O(n), where n is the number of applicants. This is because you would have to parse through the whole array and compare each value one by one to see if it matches the applicant that you are looking for. Even if you manage to get this to O(logn) using something like binary search, you would still have to always make sure that the array is sorted which would take more time as well. This means the time required to find an applicant increases with the number of applicants, which is not ideal for larger datasets.
+
+HashMap does not allow duplicate keys, which ensures that each applicant's name is unique within the collection. This is particularly useful for ensuring data integrity in our application. Right now, I am just using the name of the applicant as the unique key which is fine for this workshop. However, ideally I should use a uniquely identifiable key such as an email as two applicants can have the same name.
+
+Why Not ArrayList?
+ As we talked about earlier, an ArrayList would require O(n) time to find an applicant by name, as it would need to iterate through each element until it finds the match. This linear search is significantly slower than the constant time search provided by HashMap.
+Deleting an element from an ArrayList also requires O(n) time in the worst case because the elements need to be shifted to fill the gap left by the removed element.
+Inserting an element at a specific position in an ArrayList (other than the end) requires O(n) time as well, due to the need to shift elements to make room for the new element.
