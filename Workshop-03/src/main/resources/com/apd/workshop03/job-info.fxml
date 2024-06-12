@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.FlowPane?>
+<VBox prefHeight="600.0" prefWidth="800.0" spacing="10" style="-fx-padding: 20;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.apd.workshop03.controllers.JobInfoController">
+    <children>
+        <BorderPane prefHeight="86.0" prefWidth="780.0">
+            <top>
+                <VBox alignment="CENTER" spacing="10" BorderPane.alignment="CENTER">
+                    <children>
+                        <Label fx:id="jobInfoHeading" style="-fx-font-size: 32px; -fx-font-weight: bold;" text="Job Info" />
+                        <Label fx:id="jobInfoDesc" style="-fx-font-size: 18px;" text="Job Description" />
+                    </children>
+                </VBox>
+            </top>
+         <bottom>
+                <HBox alignment="CENTER" nodeOrientation="RIGHT_TO_LEFT" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                    <children>
+                        <Button onAction="#handleExitButton" prefHeight="28.0" prefWidth="85.0" style="-fx-font-size: 14px;" styleClass="btn, btn-md, btn-danger" text="Exit" />
+                        <Button fx:id="backButton" onAction="#handleBackButton" prefHeight="28.0" prefWidth="83.0" style="-fx-font-size: 14px;" styleClass="btn, btn-md, btn-default" text="Back">
+                            <HBox.margin>
+                                <Insets left="20.0" />
+                            </HBox.margin>
+                        </Button>
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <BorderPane.margin>
+                        <Insets />
+                    </BorderPane.margin>
+                </HBox>
+         </bottom>
+        </BorderPane>
+        <GridPane alignment="CENTER" hgap="10" vgap="10">
+            <children>
+                <Label text="Deadline:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                <Label fx:id="deadlineDateLabel" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                <Label text="Required Skills:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                <Label fx:id="requiredSkillsLabel" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                <Label text="Name:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                <Label text="Phone Number:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                <TextField fx:id="phoneNumberField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                <Label text="Add Skills:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                <HBox spacing="5" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                    <children>
+                        <Button onAction="#handleAddSkill" styleClass="btn, btn-sm, btn-primary" text="+" />
+                    </children>
+                </HBox>
+                <HBox GridPane.columnIndex="1" GridPane.rowIndex="6">
+                    <children>
+                        <FlowPane fx:id="skillsFlowPane" />
+                    </children>
+                </HBox>
+
+                <Label text="Select Companies:" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                <VBox spacing="5" style="-fx-padding: 5;" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                    <children>
+                        <CheckBox fx:id="googleCheckBox" text="Google" />
+                        <CheckBox fx:id="microsoftCheckBox" text="Microsoft" />
+                        <CheckBox fx:id="metaCheckBox" text="Meta" />
+                        <CheckBox fx:id="appleCheckBox" text="Apple" />
+                    </children>
+                </VBox>
+
+            </children>
+         <columnConstraints>
+            <ColumnConstraints />
+             <ColumnConstraints hgrow="ALWAYS" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+        </GridPane>
+        <Label fx:id="applicationStatusLabel" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <HBox alignment="CENTER" spacing="20">
+            <children>
+                <Button fx:id="applyButton" onAction="#handleApply" styleClass="btn, btn-md, btn-success" text="Apply" />
+                <Button onAction="#handleClear" styleClass="btn, btn-md, btn-default" text="Clear" />
+            </children>
+        </HBox>
+    </children>
+</VBox>

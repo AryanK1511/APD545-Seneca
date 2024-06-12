@@ -8,6 +8,7 @@ A collection of all the workshops that I completed as a part of the Application 
 |---|---|---|
 |**Workshop 01**|`100`|https://youtu.be/loXpSCm9u6k|
 |**Workshop 02**|`100`|https://youtu.be/gk0MIf5Z3w8|
+|**Workshop 03**|`100`|https://youtu.be/aKntZ8rHZx8|
 
 ### Author
 [Aryan Khurana](https://github.com/AryanK1511)
