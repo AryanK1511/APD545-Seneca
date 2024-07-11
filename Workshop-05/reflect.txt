@@ -1,0 +1,52 @@
+/**********************************************
+ Workshop # 05
+ Course: APD545 - Semester 5
+ Last Name: Khurana
+ First Name: Aryan
+ ID: 145282216
+ Section: NAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Aryan Khurana
+ Date: July 10, 2024
+ **********************************************/
+
+In this workshop I have implemented register and login functionality for my Job Application software. This is how I did it.
+
+Class Design:
+
+Applicant Model
+The Applicant class models an individual applicant's information. It includes attributes for a unique user ID, name, phone number, job role, skills, and companies they've worked for. The skills attribute is a list initialized to an empty list in the constructor. Methods in this class allow getting and setting each attribute, adding skills, and managing the list of companies. This class is essential for encapsulating the details of an applicant, ensuring that their data is organized and easily accessible.
+
+Database Model
+The Database class serves as a simple in-memory storage system for User objects. It uses a static HashMap to store users, mapping usernames to User objects. The class includes methods to add, remove, and retrieve users, as well as set and get the current user. The retrieval method checks the username and password to ensure they match before returning the user. This class is crucial for managing user data within the application, providing a straightforward way to store and access user information during runtime.
+
+User Model
+The User class manages user authentication details, specifically the username and a hashed password. It includes methods to create a user with a hashed password, retrieve and set the username, set a new password by hashing it, and verify if an input password matches the stored hashed password. The password hashing uses the SHA-256 algorithm for security, ensuring that passwords are stored and compared in a secure manner. This class is essential for maintaining secure user authentication in the application.
+
+Usage of Data Structures:
+
+List for Skills and Companies:
+Skills: The skills attribute is a list (ArrayList). This choice allows for dynamic management of an applicant's skills, including easy additions, iterations, and retrievals. Lists are ideal for ordered collections where elements are accessed sequentially or by index.
+Companies: The companies attribute, though not initialized in the constructor, is also a list. This structure is chosen for similar reasons, allowing dynamic addition and management of the companies an applicant has worked for.
+Database Class
+
+HashMap for Users:
+
+The Database class uses a static HashMap to store users. The keys are usernames, and the values are User objects. This data structure is chosen for its efficiency in providing average O(1) time complexity for both insertion and retrieval operations. This ensures quick access to user information, which is crucial for authentication processes where performance and speed are essential.
+Static User for Current User:
+
+The currentUser is stored as a static User object. This design allows the application to maintain a single reference to the currently logged-in user, ensuring that the user session information is easily accessible and modifiable across different parts of the application.
+
+Detailed Rationale
+
+Flexibility and Dynamic Management:
+
+Using lists for attributes like skills and companies provides flexibility to dynamically add, remove, and iterate over elements. This is especially useful in scenarios where the number of items is not fixed and can grow or shrink over time.
+
+Efficiency and Performance:
+
+The HashMap is chosen for user storage due to its efficient O(1) average time complexity for lookups and inserts. This performance benefit is crucial for operations like user login, where quick access to user data is required.
+
+Centralized User Management:
+
+Using a static reference for the current user simplifies session management, allowing easy access and modification of the logged-in user's data across different parts of the application.
