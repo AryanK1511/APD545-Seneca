@@ -1,0 +1,4 @@
+Conversion Results:
+From INR to CAD: 1.6 CAD
+From USD to CAD: 137.0 CAD
+From EUR to CAD: 149.0 CAD

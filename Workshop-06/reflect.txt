@@ -1,0 +1,12 @@
+In this project, the class design includes two classes, ExchangeRate and the Main class.
+
+1. ExchangeRate Class: This class is used to model an exchange rate between two currencies. It has three attributes: fromCurrency, toCurrency, and rate. The class includes a constructor to initialize these attributes and an overridden toString method to provide a readable string representation of the object. The single responsibility of this class makes it a clean and maintainable design choice, as it encapsulates all relevant information and behaviors related to an exchange rate.
+
+2. Main Class: This class serves as the entry point of the application and contains the main method. It is responsible for reading exchange rates from a file, converting a fixed amount of money based on these rates, and writing the conversion results to another file. This class handles the high-level logic and orchestration of the program, while delegating the specific task of representing exchange rates to the ExchangeRate class. This separation of concerns improves code readability and maintainability.
+
+Data Structure
+
+Choice of Data Structure: The solution uses an ArrayList to store the exchange rates and conversion results. The choice of ArrayList is based on its characteristics that align well with the requirements of the application. ArrayList is a dynamic array that can grow as needed, making it suitable for storing an unknown number of exchange rates and conversion results. It provides fast random access to elements, which is useful when iterating over the list to perform conversions and write results.
+
+Performance:
+ArrayList: It offers O(1) time complexity for accessing elements by index, which is beneficial when iterating through the list to perform conversions. However, it has O(n) time complexity for adding or removing elements in the middle of the list due to the need to shift elements.
